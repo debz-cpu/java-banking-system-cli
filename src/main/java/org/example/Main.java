@@ -10,14 +10,13 @@ public class Main {
         IO.println("What is your Full Name: ");
         String fullName=input.nextLine();
 
-        IO.println("What is the amount you want ");
-        double amount=input.nextDouble();
-
-
         BankAccount bankAccountObject = new BankAccount(fullName);
         bankAccountObject.checkBalance();
 
         bankAccountObject.deposit(200);
+        bankAccountObject.checkBalance();
+
+        bankAccountObject.withdraw(30);
         bankAccountObject.checkBalance();
 
 
