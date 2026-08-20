@@ -10,13 +10,19 @@ public class BankAccount {
     }
 
     public void deposit(double amount){
-        balance += amount;
-        IO.println("Deposited: € "+ amount );
+
+
+        if (amount >0){
+            balance += amount;
+            IO.println("Deposited: € "+ amount );
+        }else {
+            IO.println("Transaction failed: Type a positive number");
+        }
     }
 
     public void withdraw(double amount){
 
-        if (balance >= amount) {
+        if (balance >= amount && amount > 0) {
             balance -= amount;
             IO.println("Withdrew: € "+ amount);
         }else {
